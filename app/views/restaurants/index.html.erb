@@ -1,0 +1,8 @@
+<h1>Yelp MVP - Restaurant List</h1>
+<%= link_to 'New Restaurant', new_restaurant_path %>
+<% @restaurants.each do |restaurant| %>
+  <h3> <%= restaurant.name %> </h3>
+  <p>Cuisine: <%= restaurant.category.capitalize %></p>
+  <%= link_to 'View', restaurant_path(restaurant) %>
+<% end %>
+

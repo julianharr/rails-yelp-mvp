@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <h1> <%= @restaurant.name %> </h1>
+  <h3>Cuisine: <%= @restaurant.category.capitalize %></h3>
+  <p><%= @restaurant.address %></p>
+  <hr>
+  <strong>Reviews <hr></strong>
+  <% @restaurant.reviews.each do |review| %>
+   <p>
+    <%= review.content %>
+    </p>
+   <hr>
+  <% end %>
+  <br>
+
+  <%= link_to 'List', restaurants_path %> |
+  <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+  <%= link_to 'Add a new review', new_restaurant_review_path(@restaurant) %> |
+  <%= link_to 'Delete', restaurant_path(@restaurant), method: :delete, data: { confirm: 'Are you sure?' }%>
+</div>

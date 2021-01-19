@@ -1,0 +1,8 @@
+<div class="container mt-5">
+  <%= simple_form_for @restaurant, html: { autocomplete: 'off' } do |f| %>
+    <%= f.input :name %> <hr>
+    <%= f.input :address %> <hr>
+    <%= f.input :category %>
+    <%= f.submit %>
+  <% end %>
+</div>
