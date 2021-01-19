@@ -1,8 +1,19 @@
-<h1>Yelp MVP - Restaurant List</h1>
-<%= link_to 'New Restaurant', new_restaurant_path %>
-<% @restaurants.each do |restaurant| %>
-  <h3> <%= restaurant.name %> </h3>
-  <p>Cuisine: <%= restaurant.category.capitalize %></p>
-  <%= link_to 'View', restaurant_path(restaurant) %>
-<% end %>
 
+
+<div class="container">
+  <h1>Yelp MVP - Restaurant List</h1>
+  <button class="btn btn-primary btn-sm"><%= link_to 'New Restaurant', new_restaurant_path %></button>
+  <div class="row">
+  <% @restaurants.each do |restaurant| %>
+  <div class="card m-3" style="width: 100%;">
+  <div class="card-body">
+    <h5 class="card-title"><%= restaurant.name %> </h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= restaurant.category.capitalize %></h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <%= link_to 'View', restaurant_path(restaurant) %> |
+    <%= link_to 'Delete', restaurant_path(restaurant), method: :delete, data: { confirm: 'Are you sure?' }%>
+  </div>
+</div>
+  <% end %>
+  </div>
+</div>
